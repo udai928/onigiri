@@ -1,10 +1,18 @@
-num  = gets.to_i
 
-strs = Array.new
+require "/Users/kuzuyayuudai/Documents/my-dev/競技プログラミング/onigiri/read_file.rb"
+include Tools
 
-for n in 1..num
-  strs.concat(gets.split(" "))
-end
+strs = Tools.get_input_split_space()
+num = strs.take(1)
+strs.shift
+
+# num  = gets.to_i
+# strs = Array.new
+#
+# for n in 1..num
+#   strs.concat(gets.split(" "))
+# end
+
 hash = Hash[*strs]
 hash.each_key{|key|
   hash.store(key,hash.fetch(key).to_i)
