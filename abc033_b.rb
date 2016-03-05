@@ -1,20 +1,10 @@
-#num = 4
-num = gets.to_i
-strs = ""
+num  = gets.to_i
+
+strs = Array.new
+
 for n in 1..num
-  p strs
-  strs += gets.to_s.split(" ")
+  strs.concat(gets.split(" "))
 end
-
-# str1 = "unagi 20"
-# str2 = "usagi 13"
-# str3 = "snuke 42"
-# str4 = "smeke 7"
-#
-# strs = str1.split(" ") + str2.split(" ") + str3.split(" ") + str4.split(" ")
-
-p strs
-p "--------------------------"
 hash = Hash[*strs]
 hash.each_key{|key|
   hash.store(key,hash.fetch(key).to_i)
@@ -27,8 +17,8 @@ hash.each_value{|val|
 majority = sum / 2
 
 winner = hash.inject([]){|arr,(key,val)|
-  arr << key if val > majority
-  arr
+    arr << key if val > majority
+    arr
 }
 
 if winner.size() == 0
