@@ -1,5 +1,5 @@
 module Tools
-  PATH = "C:\\Users\\kuzuya_yudai\\Documents\\GitHub\\onigiri\\setting.txt"
+  PATH = ""
     def get_inputarray
         strs = Array.new
         File.open(PATH,'r:utf-8') do |f|
