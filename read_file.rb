@@ -1,9 +1,10 @@
 module Tools
+  PATH = "C:\\Users\\kuzuya_yudai\\Documents\\GitHub\\onigiri\\setting.txt"
     def get_inputarray
         strs = Array.new
-        File.open("/Users/kuzuyayuudai/Documents/my-dev/競技プログラミング/setting/setting.txt",'r:utf-8') do |f|
+        File.open(PATH,'r:utf-8') do |f|
             f.each_line do |line|
-                strs.push(line)
+                strs.push(line.strip)
             end
         end
         return strs
@@ -11,7 +12,7 @@ module Tools
 
     def get_inputarray_split_space
         strs = Array.new
-        File.open("/Users/kuzuyayuudai/Documents/my-dev/競技プログラミング/setting/setting.txt",'r:utf-8') do |f|
+        File.open(PATH,'r:utf-8') do |f|
             f.each_line do |line|
                 strs.concat(line.to_s.split(" "))
             end
@@ -19,9 +20,19 @@ module Tools
         return strs
     end
 
+    def get_inputarray_x_y
+        strs = Array.new
+        File.open(PATH,'r:utf-8') do |f|
+            f.each_line do |line|
+                strs.push(line.to_s.split(" ").map(&:to_i))
+            end
+        end
+        return strs
+    end
+
     def get_input_online
         str = ""
-        File.open("/Users/kuzuyayuudai/Documents/my-dev/競技プログラミング/setting/setting.txt",'r:utf-8') do |f|
+        File.open(PATH,'r:utf-8') do |f|
             str = f.readline
         end
         return str
