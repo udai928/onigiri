@@ -1,5 +1,4 @@
-#
-# require "/Users/kuzuyayuudai/Documents/my-dev/競技プログラミング/onigiri/read_file.rb"
+# require_relative "read_file.rb"
 # include Tools
 #
 # strs = Tools.get_input_split_space()
