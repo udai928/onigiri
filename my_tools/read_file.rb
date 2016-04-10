@@ -1,7 +1,6 @@
 module Tools
 
-    CURRENT_DIR = File.dirname(__FILE__)
-    INPUT_FILE = CURRENT_DIR + "/setting.txt"
+    INPUT_FILE = File.expand_path("../setting/setting.txt",Dir::getwd)    
 
     def get_inputarray
         strs = Array.new
